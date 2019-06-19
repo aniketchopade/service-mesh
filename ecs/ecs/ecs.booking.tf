@@ -30,7 +30,7 @@ resource "aws_ecs_service" "booking_service" {
   load_balancer {
     target_group_arn = "${aws_alb_target_group.booking_target_group.id}"
     container_name   = "booking"
-    container_port   = "3000"
+    container_port   = "3001"
   }
 
   depends_on = [

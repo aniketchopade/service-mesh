@@ -4,6 +4,9 @@ resource "aws_alb_target_group" "movie_target_group" {
   port     = 3000
   protocol = "HTTP"
   vpc_id   = var.vpc_id
+  health_check {
+	path = "/movies"
+  }
 }
 
 resource "aws_alb_target_group" "booking_target_group" {
@@ -11,6 +14,9 @@ resource "aws_alb_target_group" "booking_target_group" {
   port     = 3001
   protocol = "HTTP"
   vpc_id   = var.vpc_id
+  health_check {
+        path = "/booking"
+  }
 }
 
 resource "aws_alb_target_group" "showtime_target_group" {
@@ -18,6 +24,14 @@ resource "aws_alb_target_group" "showtime_target_group" {
   port     = 3002
   protocol = "HTTP"
   vpc_id   = var.vpc_id
+
+
+  health_check {
+        path = "/cinemas"
+  }
+
+
+
 }
 
 resource "aws_alb" "main" {

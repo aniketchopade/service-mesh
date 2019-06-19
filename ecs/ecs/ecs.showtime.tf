@@ -30,7 +30,7 @@ resource "aws_ecs_service" "showtime_service" {
   load_balancer {
     target_group_arn = "${aws_alb_target_group.showtime_target_group.id}"
     container_name   = "showtime"
-    container_port   = "3000"
+    container_port   = "3002"
   }
 
   depends_on = [
