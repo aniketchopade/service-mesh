@@ -32,7 +32,7 @@ mediator.on('boot.ready', (db) => {
       })
     })
     .then(app => {
-      console.log(`Server started succesfully, running on port: 3000.`)
+      console.log(`Server started succesfully, running on port: 80.`)
       app.on('close', () => {
         rep.disconnect()
       })
